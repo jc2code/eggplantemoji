@@ -1,5 +1,5 @@
 <%= form_for @asset  do |f| %>
-  <% if asset.errors.any? %>
+  <% if @asset.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(asset.errors.count, "error") %> prohibited this asset from being saved:</h2>
 
@@ -14,6 +14,8 @@
   <div class="field">
     <%= f.label :file_upload %><br>
     <%= f.file_field :file_upload%>
+
+    <%= f.hidden_field :folder_id %>
   </div>
 
 
